@@ -48,8 +48,8 @@ var productid=$(this).attr('data-productid');
 var productname=$(this).attr('data-productname');	
 	
 var options = {
-    "key": "rzp_test_zHhNFsppG7bIjH", // Enter the Key ID generated from the Dashboard
-    "amount": amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "key": "rzp_test_SKFrvWEajlFaxL", // Enter the Key ID generated from the Dashboard
+    "amount": "5000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "name": "The Digital Oceans",
     "description": productname,
     "image": "https://example.com/your_logo",
@@ -64,7 +64,7 @@ var options = {
 			{
 				if(finalresponse=='done')
 				{
-					window.location.href="http://localhost/php-practical-work/payment-gateway/razorpay/success.php";
+					window.location.href="success.php";
 				}
 				else 
 				{
@@ -86,3 +86,4 @@ var rzp1 = new Razorpay(options);
 </script>
 </body>
 </html>
+
