@@ -1,28 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<button onclick="startPayment()">Pay with Razorpay</button>
+<button id="pay-btn">Pay ₹500</button>
+
 <script>
-    function startPayment() {
-        var options = {
-            key: "rzp_test_SKFrvWEajlFaxL", // Enter the Key ID generated from the Dashboard
-            amount: '5000', // Amount is in currency subunits. 
-            currency: "INR",
-            name: "LOTUS365",
-            description: "Test transaction",
-            image: "https://cdn.razorpay.com/logos/GhRQcyean79PqE_medium.png",// This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            prefill: {
-                name: "mg",
-                email: "mh@gmail.com",
-                contact: "962962"
-            },
-            notes: {
-                address: "Razorpay Corporate Office"
-            },
-            theme: {
-                "color": "#3399cc"
-            }
-        };
-        var rzp = new Razorpay(options);
-        rzp.open();
-    }
+document.getElementById("pay-btn").onclick = function(e){
+
+    var options = {
+        "key": "rzp_test_SKFrvWEajlFaxL", // Enter your Razorpay Key ID
+        "amount": 50000, // Amount in paise (50000 = ₹500)
+        "currency": "INR",
+        "name": "My Website",
+        "description": "Test Transaction",
+        "image": "https://yourlogo.com/logo.png",
+        "handler": function (response){
+            alert("Payment Successful!");
+            alert("Payment ID: " + response.razorpay_payment_id);
+        },
+        "prefill": {
+            "name": "Maddy",
+            "email": "test@example.com",
+            "contact": "9999999999"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+}
 </script>
+
+</body>
+</html>
