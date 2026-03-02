@@ -41,15 +41,15 @@ var productid=$(this).attr('data-productid');
 var productname=$(this).attr('data-productname');	
 	
 var options = {
-    "key": "rzp_test_zHhNFsppG7bIjH", // Enter the Key ID generated from the Dashboard
-    "amount": amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "key": "rzp_test_SKFrvWEajlFaxL", // Enter the Key ID generated from the Dashboard
+    "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "name": "Lotus365",
     "description": "Hello",
     "image": "https://example.com/your_logo",   
-    },
     "theme": {
         "color": "#3399cc"
     }
+}
 };
 var rzp1 = new Razorpay(options);
  rzp1.open();
