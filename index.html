@@ -1,12 +1,7 @@
 
-// Include Razorpay Checkout.js library
-echo '<script src="https://checkout.razorpay.com/v1/checkout.js"></script>';
-
-// Create a payment button with Checkout.js
-echo '<button onclick="startPayment()">Pay with Razorpay</button>';
-
-// Add a script to handle the payment
-echo '<script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<button onclick="startPayment()">Pay with Razorpay</button>
+<script>
     function startPayment() {
         var options = {
             key: "rzp_test_SKFrvWEajlFaxL", // Enter the Key ID generated from the Dashboard
@@ -30,4 +25,4 @@ echo '<script>
         var rzp = new Razorpay(options);
         rzp.open();
     }
-</script>';
+</script>
